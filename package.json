@@ -1,0 +1,28 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "workspaces": [
+    "artifacts/*"
+  ],
+  "scripts": {
+    "dev": "npm --workspace=@workspace/talabat run dev",
+    "build": "npm --workspace=@workspace/talabat run build",
+    "typecheck": "npm --workspace=@workspace/talabat run typecheck",
+    "server:dev": "node server/index.mjs",
+    "server:migrate": "node server/migrate.mjs",
+    "server:test": "env -u DATABASE_URL -u EXTERNAL_DATABASE_URL -u TEST_DATABASE_URL TALABAT_TEST_MODE=1 SESSION_SECRET=${SESSION_SECRET:-12345678901234567890123456789012} node --test server/*.test.mjs server/test/*.test.mjs"
+  },
+  "private": true,
+  "dependencies": {
+    "@replit/connectors-sdk": "^0.4.1",
+    "bcryptjs": "3.0.2",
+    "nodemailer": "10.0.10",
+    "pg": "8.16.3",
+    "vite": "catalog:"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "typescript": "~5.9.3"
+  }
+}

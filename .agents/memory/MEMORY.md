@@ -1,0 +1,12 @@
+- [Raw SQL parameter discipline](raw-sql-parameters.md) — every PostgreSQL placeholder must have a matching parameter; unused placeholders fail at runtime even when TypeScript passes
+- [PostgreSQL fixture cleanup](http-fixture-cleanup.md) — recover test-owned rows by a unique parent even if the HTTP request commits before a response assertion fails.
+- [Console workflow lifecycle](workflow-start-state.md) — verify process and port after restart or post-merge reconciliation; success alone may not refresh the server.
+- [Legacy API preview routing](legacy-api-preview-routing.md) — check artifact-prefixed routes hit the current backend, not a stale deployed upstream.
+- [Vercel project roots](vercel-project-root-output.md) — successful Vite builds can fail upload if Vercel reads config and output relative to a different monorepo root.
+- [Shallow Git history](shallow-git-history.md) — older frontend revisions may still exist upstream even when absent from every local ref.
+- [Chromium CDP preview checks](chromium-cdp-preview.md) — browser-only visual checks may need a CDP client without Node WebSocket; match the HTTP 101 code, not its reason phrase.
+- [Shared database test isolation](shared-db-test-isolation.md) — fixture cleanup count assertions are unreliable when independent test files run concurrently against one database.
+- [External production verification](external-production-verification.md) — GitHub deployment URLs can be Vercel-login protected even while the production alias is public; verify the alias separately.
+- [Render SMTP egress](render-smtp-egress.md) — Render Free blocks Gmail SMTP on port 465; a healthy API and correct recipient do not imply email delivery.
+- [Restaurant access credentials](restaurant-account-credentials.md) — restaurant serials are encrypted and keyed by the stable SESSION_SECRET; rotate them before changing that secret.
+- [Vite production bundle timeouts](vite-bundle-timeout.md) — production builds can exceed five minutes during dependency transformation even when typechecking and the dev preview work.
